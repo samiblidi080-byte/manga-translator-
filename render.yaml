@@ -1,1 +1,48 @@
 
+services:
+
+  - type: worker
+    name: manga-telegram-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: python bot.py
+
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+
+      - key: REDIS_URL
+        sync: false
+
+      - key: OPENAI_API_KEY
+        sync: false
+
+      - key: GOOGLE_CREDENTIALS
+        sync: false
+
+      - key: FONT_PATH
+        value: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+
+
+  - type: worker
+    name: manga-processing-worker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: python worker.py
+
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+
+      - key: REDIS_URL
+        sync: false
+
+      - key: OPENAI_API_KEY
+        sync: false
+
+      - key: GOOGLE_CREDENTIALS
+        sync: false
+
+      - key: FONT_PATH
+        value: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+
