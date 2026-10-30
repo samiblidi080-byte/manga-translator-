@@ -1,1 +1,13 @@
 
+aiogram==3.22.0
+redis==5.2.1
+rq==2.3.3
+PyMuPDF==1.26.3
+Pillow==11.3.0
+opencv-python-headless==4.11.0.86
+numpy==2.2.6
+google-cloud-vision==3.10.2
+openai==1.99.9
+arabic-reshaper==3.0.0
+python-bidi==0.6.6
+
