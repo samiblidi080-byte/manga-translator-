@@ -1,1 +1,17 @@
 
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+*.pdf
+*.png
+*.jpg
+
+credentials.json
+service-account.json
+
